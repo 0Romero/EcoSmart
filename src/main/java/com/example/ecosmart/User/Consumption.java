@@ -2,6 +2,7 @@ package com.example.ecosmart.User;
 
 import java.time.LocalDateTime;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,27 +10,66 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
+@Table(name = "consumption")
 @Entity
-@Table(name = "Consumption")
-@Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
 public class Consumption {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private double amount; // Consumo em kWh
-    private LocalDateTime timestamp; // Data e hora do registro
 
     @ManyToOne
     @JoinColumn(name = "device_id", nullable = false)
     private Device device;
 
+    @Column(nullable = false)
+    private double consumption;
+
+    @Column(nullable = false)
+    private LocalDateTime timestamp;
+
+    // Construtor padrão
+    public Consumption() {
+    }
+
+    // Construtor com parâmetros
+    public Consumption(Device device, double consumption, LocalDateTime timestamp) {
+        this.device = device;
+        this.consumption = consumption;
+        this.timestamp = timestamp;
+    }
+
+    // Getters e Setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Device getDevice() {
+        return device;
+    }
+
+    public void setDevice(Device device) {
+        this.device = device;
+    }
+
+    public double getConsumption() {
+        return consumption;
+    }
+
+    public void setConsumption(double consumption) {
+        this.consumption = consumption;
+    }
+
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
+    }
 }

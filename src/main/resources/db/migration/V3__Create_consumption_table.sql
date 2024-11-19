@@ -1,7 +1,7 @@
-CREATE TABLE consumption (
+CREATE TABLE IF NOT EXISTS consumption (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     amount DOUBLE NOT NULL,
     timestamp TIMESTAMP NOT NULL,
     device_id BIGINT NOT NULL,
-    FOREIGN KEY (device_id) REFERENCES device(id)
+    FOREIGN KEY (device_id) REFERENCES devices(id)
 );
