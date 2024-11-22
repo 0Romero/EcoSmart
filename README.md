@@ -1,6 +1,6 @@
 # EcoSmart API
 
-Esta é uma API RESTful para gerenciar clientes e gerar dicas e recomendações de como reduzir o consumo de energia. chamada EcoSmart.
+Esta é uma API WebMVC para gerenciar clientes e gerar dicas e recomendações de como reduzir o consumo de energia. chamada EcoSmart.
 
 ## Tecnologias Utilizadas
 
@@ -13,7 +13,6 @@ Esta é uma API RESTful para gerenciar clientes e gerar dicas e recomendações 
 ## Funcionalidades
 
 - CRUD (Create, Read, Update, Delete) de clientes
-- Cadastro e busca de endereços dos clientes
 - Geração de recomendações de consumo energético para clientes
 
 ## Como Executar
