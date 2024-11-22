@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios de Consumo de Energia</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Relatório de Consumo de Energia</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Marca</th>
+                    <th>Consumo (kWh)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="device : ${devices}">
+                    <td th:text="${device.name}"></td>
+                    <td th:text="${device.brand}"></td>
+                    <td th:text="${device.energyConsumption}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <a href="/devices">Voltar para Cadastro</a>
+    </div>
+</body>
+</html>

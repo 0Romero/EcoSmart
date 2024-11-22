@@ -20,6 +20,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "devices")
 @Data
+
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -28,13 +29,10 @@ public class Device {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String type;
-    private boolean status; // true = ligado, false = desligado
-    private double powerRating; // Potência em watts
-    @Column(nullable = false)
-    private double maxAllowedConsumption;
+    private String brand;
+    private Double powerConsumption;
     @OneToMany(mappedBy = "device", cascade = CascadeType.ALL)
-    private List<Consumption> consumptions;
+    private List<Report> reports;
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private AppUser user; // Relacionamento com o proprietário do dispositivo

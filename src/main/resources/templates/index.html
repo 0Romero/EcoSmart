@@ -1,28 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat - EcoSmart</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <title>Gerenciamento de Energia</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
 </head>
-<body>
-    <div class="navbar">
-        <a href="/index">Home</a>
-        <a href="/req/login">Login</a>
-    </div>
-    
-    <div class="chat-container">
-        <div class="chat-box" id="chatBox">
-            <div class="chat-message user">Hello, how can I reduce energy consumption?</div>
-            <div class="chat-message ai">You can start by turning off unused devices.</div>
-        </div>
-        <form id="chatForm">
-            <input type="text" class="chat-input" placeholder="Type your message..." required>
-            <button class="send-btn" type="submit">Send</button>
-        </form>
-    </div>
 
-    <script src="/js/chat.js"></script>
+<body>
+    <header>
+        <h1>Assistente Virtual para Gerenciamento de Energia</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Cadastrar Dispositivos</a></li>
+                <li><a href="#">Relatórios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="intro">
+            <h2>Bem-vindo ao Gerenciamento Inteligente de Energia</h2>
+            <p>Com nossa assistente virtual, você pode gerenciar o consumo energético de dispositivos domésticos. Pergunte sobre dicas de economia, adicione dispositivos e obtenha informações detalhadas sobre o consumo de energia.</p>
+        </section>
+
+        <!-- Seção de Assistente Virtual (Onde o código do chat se encaixa) -->
+        <section id="chat-section">
+            <h2>Conversar com a Assistente Virtual</h2>
+            <div id="chat-container" class="chat-container">
+                <!-- As mensagens do chat aparecerão aqui -->
+            </div>
+            <form id="chat-form" class="chat-form">
+                <input type="text" id="chat-input" placeholder="Digite sua pergunta..." required />
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <!-- Outras seções podem ser adicionadas abaixo -->
+        <section id="features">
+            <div class="feature-card">
+                <h3>Cadastro de Dispositivos</h3>
+                <p>Cadastre seus dispositivos domésticos para monitorar o consumo de energia e receber dicas de como economizar.</p>
+                <a href="/devices" class="btn">Cadastrar Dispositivos</a>
+            </div>
+            <div class="feature-card">
+                <h3>Relatórios de Consumo</h3>
+                <p>Receba relatórios detalhados sobre o consumo de energia de cada dispositivo em sua casa.</p>
+                <a href="/devices/report" class="btn">Ver Relatórios</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Gerenciamento de Energia. Todos os direitos reservados.</p>
+    </footer>
 </body>
+
 </html>
