@@ -23,6 +23,5 @@ public class AppUser {
     String password;
     LocalDateTime createdAt;
     LocalDateTime updatedAt;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Device> devices; // Dispositivos associados ao usuário
+    
 }
